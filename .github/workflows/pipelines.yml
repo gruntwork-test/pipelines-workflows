@@ -37,7 +37,7 @@ on:
 
 env:
   PIPELINES_CLI_VERSION: v0.35.3
-  PIPELINES_ACTIONS_VERSION: v3.4.0
+  PIPELINES_ACTIONS_VERSION: main
 
   # GitHub Actions tends to hit resource exhaustion and kill running jobs
   # if we leave parallelism unbounded, so we set the max to 10 for a sane default.
@@ -85,7 +85,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: pipelines-actions
-          repository: gruntwork-io/pipelines-actions
+          repository: gruntwork-test/pipelines-actions
           ref: ${{ env.PIPELINES_ACTIONS_VERSION }}
           token: ${{ steps.pipelines-gruntwork-read-token.outputs.PIPELINES_TOKEN }}
 
