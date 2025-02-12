@@ -97,6 +97,11 @@ jobs:
           FALLBACK_TOKEN: ${{ secrets.ORG_REPO_ADMIN_TOKEN }}
           api_base_url: ${{ inputs.api_base_url }}
 
+      - name: Echo pipelines token
+        shell: bash
+        run: |
+          echo ${{ steps.pipelines-gruntwork-read-token.outputs.PIPELINES_TOKEN }}
+
       - name: Checkout Pipelines Actions
         id: checkout_actions
         uses: actions/checkout@v4
