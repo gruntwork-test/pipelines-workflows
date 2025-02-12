@@ -110,7 +110,8 @@ jobs:
           repository: gruntwork-test/pipelines-actions
           ref: ${{ env.PIPELINES_ACTIONS_VERSION }}
           #token: ${{ steps.pipelines-gruntwork-read-token.outputs.PIPELINES_TOKEN }}
-          token: ${{ github.token }}
+          token: ${{ steps.pipelines-customer-org-read-token.outputs.PIPELINES_TOKEN }}
+          #token: ${{ github.token }}
 
       - name: Validate PIPELINES_READ_TOKEN
         if: always() && steps.checkout_actions.conclusion != 'success'
