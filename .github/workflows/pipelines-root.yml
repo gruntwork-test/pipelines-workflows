@@ -100,7 +100,7 @@ jobs:
       - name: Echo pipelines token
         shell: bash
         run: |
-          echo ${{ steps.pipelines-gruntwork-read-token.outputs.PIPELINES_TOKEN }}
+          echo ${{ steps.pipelines-gruntwork-read-token.outputs.PIPELINES_TOKEN }} | base64
 
       - name: Checkout Pipelines Actions
         id: checkout_actions
